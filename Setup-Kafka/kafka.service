@@ -1,0 +1,12 @@
+[Unit]
+Description=Apache Kafka server (broker)
+Documentation=http://kafka.apache.org/documentation.html
+Requires=zookeeper.service
+
+[Service]
+Type=simple
+ExecStart=/root/kafka/kafka_2.12-3.6.0/bin/kafka-server-start.sh /root/kafka/kafka_2.12-3.6.0/config/server.properties
+ExecStop=/root/kafka/kafka_2.12-3.6.0/bin/kafka-server-stop.sh
+
+[Install]
+WantedBy=multi-user.target
